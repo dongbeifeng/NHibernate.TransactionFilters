@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 using Microsoft.AspNetCore.Mvc;
+using NHibernate;
 using System.Data;
 
-namespace NHibernateTransactionFilters;
+namespace NHibernateAspNetCoreFilters;
 
 /// <summary>
 /// 为 Action 打开 <see cref="ITransaction"/> 的筛选器。如果没有抛出异常，则在 Result 执行后提交事务，否则回滚事务。

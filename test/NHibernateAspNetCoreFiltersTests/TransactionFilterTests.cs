@@ -1,4 +1,4 @@
-ï»¿// Copyright 2022 çŽ‹å»ºå†›
+// Copyright 2022 Íõ½¨¾ü
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,13 +19,12 @@ using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
 using NHibernate;
-using NHibernateTransactionFilters;
 using NSubstitute;
 using System.Data;
 using Xunit;
 using static NSubstitute.Substitute;
 
-namespace NHibernateTransactionFiltersTests;
+namespace NHibernateAspNetCoreFilters.Tests;
 
 public class TransactionFilterTests
 {
@@ -67,7 +66,7 @@ public class TransactionFilterTests
 
     private ILogger<TransactionFilter> CreateLogger()
     {
-        LoggerFactory loggerFactory = new LoggerFactory();            
+        LoggerFactory loggerFactory = new LoggerFactory();
         var logger = loggerFactory.CreateLogger<TransactionFilter>();
         return logger;
     }
@@ -76,11 +75,11 @@ public class TransactionFilterTests
     public async Task OnActionExecutionAsyncTest()
     {
         // Arrange
-        var actionContext = new ActionContext() 
+        var actionContext = new ActionContext()
         {
-            HttpContext = new DefaultHttpContext(), 
-            RouteData = new RouteData(), 
-            ActionDescriptor = new ActionDescriptor() 
+            HttpContext = new DefaultHttpContext(),
+            RouteData = new RouteData(),
+            ActionDescriptor = new ActionDescriptor()
         };
 
         var (actionExecutingContext, actionExecutedContext) = createExecutionContexts(actionContext);

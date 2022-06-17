@@ -17,9 +17,8 @@ using Microsoft.Extensions.Logging;
 using NHibernate;
 using System.Data;
 using System.Diagnostics;
-using ISession = NHibernate.ISession;
 
-namespace NHibernateTransactionFilters;
+namespace NHibernateAspNetCoreFilters;
 
 /// <summary>
 /// 为 Action 打开 <see cref="ITransaction"/> 的筛选器。如果没有抛出异常，则在 Result 执行后提交事务，否则回滚事务。

@@ -12,4 +12,4 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NHibernateTransactionFiltersTests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("NHibernateAspNetCoreFiltersTests")]
